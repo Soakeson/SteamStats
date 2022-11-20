@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
+
+    <EditText
+        android:id="@+id/passwordEntry"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="#2a475e"
+        android:elevation="25dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColor="#c7d5e0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userNameEntry"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/userNameEntry"
+        app:layout_constraintTop_toBottomOf="@+id/userNameEntry"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/userNameEntry"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="#2a475e"
+        android:elevation="25dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="35"
+        android:textColor="#c7d5e0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Name"
+        android:textColor="#c7d5e0"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/userNameEntry"
+        app:layout_constraintStart_toStartOf="@+id/userNameEntry" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textColor="#c7d5e0"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/passwordEntry"
+        app:layout_constraintStart_toStartOf="@+id/passwordEntry" />
+
+    <Button
+        android:id="@+id/login_button"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#7da10e"
+        android:backgroundTintMode="src_over"
+        android:elevation="25dp"
+        android:text="LOGIN"
+        android:textAlignment="center"
+        android:textColor="#c7d5e0"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/passwordEntry"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEntry"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        android:elevation="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_steampowered_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
