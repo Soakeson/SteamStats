@@ -6,7 +6,6 @@ plugins {
 
 android {
     compileSdk 32
-
     defaultConfig {
         applicationId "com.example.steamstats"
         minSdk 29
@@ -37,6 +36,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.squareup.picasso:picasso:2.8'
+
     def room_version = "2.4.3"
 
     implementation "androidx.room:room-runtime:$room_version"

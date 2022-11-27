@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.steamstats.databinding.FragmentStatsBinding
 import com.example.steamstats.models.UserInfo
+import com.squareup.picasso.Picasso
 
 class StatsFragment: Fragment() {
     override fun onCreateView(
@@ -16,9 +17,13 @@ class StatsFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val viewModel: StatsViewModel by activityViewModels()
-        val user = UserInfo(viewModel.response)
         val binding = FragmentStatsBinding.inflate(inflater, container, false)
-        binding.hoursPlayed.text = (user.totalHours).toString()
+        binding.totalHoursPlayed.text = (viewModel.user.totalHours).toString()
+        binding.userName.text = viewModel.user.userName
+        Picasso
+            .get()
+            .load(viewModel.user.avatarURL)
+            .into(binding.avatar)
 
         return binding.root
     }
