@@ -1,7 +1,9 @@
 package com.example.steamstats.models
 
 data class GameInfo (
-    var id: Long,
+    var appid: Long,
     var title: String,
-    var playTime: Long
+    var imgIconURL: String,
+    var playTime: Int,
+    var hasPlayed: Boolean
 )

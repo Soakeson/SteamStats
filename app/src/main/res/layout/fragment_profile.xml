@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ContraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".ProfileFragment">
+
+    <ImageView
+        android:id="@+id/profileAvatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:elevation="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileUserName"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/profileUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:elevation="30sp"
+        android:text="--USERNAME--"
+        android:textAlignment="center"
+        android:textColor="#c7d5e0"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/logoutButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#2a475e"
+        android:elevation="30sp"
+        android:src="@android:drawable/ic_lock_lock"
+        android:tint="#c7d5e0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:alpha=".7"
+        android:src="@android:drawable/screen_background_dark_transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileAvatar" />
+
+    <TextView
+        android:id="@+id/profileTotalHoursPlayed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:elevation="30sp"
+        android:text="::HOURS::"
+        android:textAlignment="center"
+        android:textColor="#c7d5e0"
+        android:textSize="14dp"
+        app:layout_constraintStart_toEndOf="@+id/profileHoursLabel"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/profileHoursLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:elevation="30sp"
+        android:text="Total Hours Played on Steam:"
+        android:textAlignment="center"
+        android:textColor="#c7d5e0"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/profileTitlesOwnedLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Titles Owned:"
+        android:textColor="#c7d5e0"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/profileHoursLabel"
+        app:layout_constraintTop_toBottomOf="@+id/profileHoursLabel" />
+
+    <TextView
+        android:id="@+id/profileTitlesOwned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="::TITLES OWNED::"
+        android:textColor="#c7d5e0"
+        app:layout_constraintStart_toStartOf="@+id/profileTotalHoursPlayed"
+        app:layout_constraintTop_toBottomOf="@+id/profileTotalHoursPlayed" />
+
+    <TextView
+        android:id="@+id/profileBacklogLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Backlog Size:"
+        android:textColor="#c7d5e0"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/profileTitlesOwnedLabel"
+        app:layout_constraintTop_toBottomOf="@+id/profileTitlesOwnedLabel" />
+
+    <TextView
+        android:id="@+id/profileBacklog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="::BACKLOG::"
+        android:textColor="#c7d5e0"
+        app:layout_constraintStart_toStartOf="@+id/profileTitlesOwned"
+        app:layout_constraintTop_toBottomOf="@+id/profileTitlesOwned" />
+
+    <TextView
+        android:id="@+id/profileLastLogoffLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Last Steam Logoff:"
+        android:textColor="#c7d5e0"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/profileBacklogLabel"
+        app:layout_constraintTop_toBottomOf="@+id/profileBacklogLabel" />
+
+    <TextView
+        android:id="@+id/profileLastLogoff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="::LASTLOGOFF::"
+        android:textColor="#c7d5e0"
+        app:layout_constraintStart_toStartOf="@+id/profileBacklog"
+        app:layout_constraintTop_toBottomOf="@+id/profileBacklog" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="SteamID:"
+        android:textColor="#c7d5e0"
+        app:layout_constraintStart_toStartOf="@+id/profileLastLogoffLabel"
+        app:layout_constraintTop_toBottomOf="@+id/profileLastLogoffLabel" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Date Created:"
+        android:textColor="#c7d5e0"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/profileSteamId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="::STEAMID::"
+        android:textColor="#c7d5e0"
+        app:layout_constraintStart_toStartOf="@+id/profileLastLogoff"
+        app:layout_constraintTop_toBottomOf="@+id/profileLastLogoff" />
+
+    <TextView
+        android:id="@+id/profileDateCreated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="::DATECREATED::"
+        android:textColor="#c7d5e0"
+        app:layout_constraintStart_toStartOf="@+id/profileSteamId"
+        app:layout_constraintTop_toBottomOf="@+id/profileSteamId" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

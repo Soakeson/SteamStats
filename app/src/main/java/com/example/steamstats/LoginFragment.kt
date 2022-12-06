@@ -8,6 +8,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.steamstats.databinding.FragmentLoginBinding
+import com.example.steamstats.models.SteamID
 import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
@@ -18,6 +19,13 @@ class LoginFragment : Fragment() {
     ): View? {
         val viewModel: StatsViewModel by activityViewModels()
         val binding = FragmentLoginBinding.inflate(inflater, container, false)
+
+        viewModel.steamIdFound.observe(viewLifecycleOwner) { steamIdFound ->
+            if (steamIdFound && viewModel.user != null) {
+                findNavController().navigate(R.id.login_to_stats)
+            }
+        }
+
         binding.loginButton.setOnClickListener {
             lifecycleScope.launch {
                 viewModel.search(binding.steamIDEntry.text.toString())

@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.steamstats.databinding.FragmentStatsBinding
-import com.example.steamstats.models.UserInfo
 import com.squareup.picasso.Picasso
 
 class StatsFragment: Fragment() {
@@ -18,12 +19,22 @@ class StatsFragment: Fragment() {
     ): View? {
         val viewModel: StatsViewModel by activityViewModels()
         val binding = FragmentStatsBinding.inflate(inflater, container, false)
-        binding.totalHoursPlayed.text = (viewModel.user.totalHours).toString()
-        binding.userName.text = viewModel.user.userName
+        binding.totalHoursPlayed.text = (viewModel.user!!.totalHours).toString()
+        binding.userName.text = viewModel.user!!.userName
         Picasso
             .get()
-            .load(viewModel.user.avatarURL)
+            .load(viewModel.user!!.avatarURL)
             .into(binding.avatar)
+
+        binding.backlog.adapter = StatsAdapter(viewModel.user!!.backlog)
+
+        if (container != null) {
+            binding.backlog.layoutManager = LinearLayoutManager(container.context)
+        }
+
+        binding.avatar.setOnClickListener{
+            findNavController().navigate(R.id.stats_to_profile)
+        }
 
         return binding.root
     }
