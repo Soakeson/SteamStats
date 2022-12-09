@@ -12,7 +12,7 @@
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="98dp"
         android:layout_marginEnd="16dp"
         android:background="#2a475e"
         android:elevation="25dp"
@@ -59,14 +59,14 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="170dp"
+        android:layout_height="162dp"
         android:layout_marginTop="32dp"
         android:elevation="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_steampowered_icon" />
+        app:srcCompat="@drawable/ic_steamstats" />
 
     <TextView
         android:id="@+id/errorOutput"
